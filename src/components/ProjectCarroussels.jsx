@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight, FiExternalLink, FiGithub, FiCode, FiStar, FiEye } from 'react-icons/fi';
 const Project_Carroussels = () => {
@@ -51,7 +52,7 @@ const Project_Carroussels = () => {
       image: "First-aid.png",
       demoUrl: "#",
       githubUrl: "#",
-      status: "Terminé",
+      status: "En développement",
       duration: "3 mois",
       highlights: ["Interface intuitive", "Mode hors-ligne", "Certifications"]
     },
@@ -110,7 +111,7 @@ const Project_Carroussels = () => {
   ];
 
   return (
-    <section id="projects-carousel" className="py-20 px-4 bg-gray-50">
+    <section id="projects" className="py-20 px-4 bg-gray-50">
       {/* Header */}
       <div className="text-center mb-16">
         <h3 className="text-[var(--color-orange)] font-semibold uppercase text-sm mb-2">Portfolio</h3>
@@ -155,126 +156,125 @@ const Project_Carroussels = () => {
       </div>
 
       {/* Projects container */}
-      <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-6xl mx-auto">
+      <div className="flex justify-center items-center max-w-2xl mx-auto">
         {isClient && projects.map((project, idx) => {
-          // Logique d'affichage modifiée: 2 projets sur desktop au lieu de 3
-          let isVisible = false;
-          if (isMobile) {
-            // Mobile : seulement le projet actif
-            isVisible = activeProject === project.id;
-          } else {
-            // Desktop : 2 projets visibles avec le projet actif
-            const firstIdx = Math.max(0, Math.min(projects.length - 2, activeProject - 1));
-            const lastIdx = firstIdx + 1;
-            isVisible = idx >= firstIdx && idx <= lastIdx;
-          }
+          // Affichage d'un seul projet à la fois
+          const isVisible = activeProject === project.id;
           
           if (!isVisible) return null;
           
-          const isActive = activeProject === project.id;
+          const isActive = true; // Toujours actif puisqu'on affiche qu'un projet
           
           return (
             <article
               key={project.id}
-              className={`bg-white rounded-xl overflow-hidden transition-all duration-500 min-w-[360px] max-w-[480px] flex-1 group hover:shadow-xl
-                ${isActive ? 'ring-2 ring-[var(--color-orange)] shadow-xl scale-105 z-10' : 'opacity-70 hover:opacity-90 shadow-lg'}
-              `}
-              aria-current={isActive ? "step" : undefined}
-              tabIndex={isActive ? 0 : -1}
+              className={`bg-white rounded-xl overflow-hidden transition-all duration-500 w-full max-w-4xl mx-auto group hover:shadow-2xl shadow-xl ring-2 ring-[var(--color-orange)]`}
+              aria-current="step"
+              tabIndex={0}
             >
               {/* Image container */}
-              <div className="relative overflow-hidden h-56">
+              <div className="relative overflow-hidden h-80 lg:h-96">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Status badge */}
-                <div className="absolute top-4 right-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                <div className="absolute top-6 right-6">
+                  <span className={`px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm ${
                     project.status === 'Terminé' 
-                      ? 'bg-green-100 text-green-800' 
-                      : 'bg-[var(--color-orange)] bg-opacity-10 text-[var(--color-orange)]'
+                      ? 'bg-green-100/90 text-green-800' 
+                      : 'bg-[var(--color-orange)] text-white'
                   }`}>
                     {project.status}
                   </span>
                 </div>
 
                 {/* Quick actions overlay */}
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-2">
+                <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex space-x-3">
                     <button 
-                      className="flex items-center justify-center w-10 h-10 bg-white/90 rounded-full hover:bg-white transition-colors"
+                      className="flex items-center justify-center px-4 py-2 bg-white/95 backdrop-blur-sm rounded-lg hover:bg-white transition-all hover:scale-105 font-medium"
                       aria-label="Voir démo"
                     >
-                      <FiEye className="w-4 h-4 text-gray-700" />
+                      <FiEye className="w-4 h-4 mr-2 text-gray-700" />
+                      Démo
                     </button>
                     <button 
-                      className="flex items-center justify-center w-10 h-10 bg-white/90 rounded-full hover:bg-white transition-colors"
+                      className="flex items-center justify-center px-4 py-2 bg-white/95 backdrop-blur-sm rounded-lg hover:bg-white transition-all hover:scale-105 font-medium"
                       aria-label="Voir code"
                     >
-                      <FiGithub className="w-4 h-4 text-gray-700" />
+                      <FiGithub className="w-4 h-4 mr-2 text-gray-700" />
+                      Code
                     </button>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="bg-[var(--color-orange)] bg-opacity-10 text-[var(--color-orange)] rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+              <div className="p-8 lg:p-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="bg-[var(--color-orange)] text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold shadow-lg">
                     {project.id}
                   </div>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <FiCode className="w-4 h-4 mr-1" />
+                  <div className="flex items-center text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
+                    <FiCode className="w-4 h-4 mr-2" />
                     {project.duration}
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-[var(--color-orange)] font-medium mb-3">{project.subtitle}</p>
-                <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">{project.description}</p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-3">{project.title}</h3>
+                <p className="text-[var(--color-orange)] font-semibold text-lg mb-4">{project.subtitle}</p>
+                <p className="text-gray-600 mb-8 text-lg leading-relaxed">{project.description}</p>
 
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIdx) => (
-                      <span
-                        key={techIdx}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                  {/* Technologies */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+                      <FiCode className="w-5 h-5 mr-2 text-[var(--color-orange)]" />
+                      Technologies
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      {project.technologies.map((tech, techIdx) => (
+                        <span
+                          key={techIdx}
+                          className="px-4 py-2 bg-gradient-to-r from-gray-50 to-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:shadow-md transition-all hover:scale-105 border border-gray-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Highlights */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+                      <FiStar className="w-5 h-5 mr-2 text-[var(--color-orange)]" />
+                      Points forts
+                    </h4>
+                    <ul className="space-y-3">
+                      {project.highlights.map((highlight, highlightIdx) => (
+                        <li key={highlightIdx} className="flex items-center text-gray-600">
+                          <div className="w-2 h-2 bg-[var(--color-orange)] rounded-full mr-3 flex-shrink-0"></div>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
-                {/* Highlights */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3">Points forts</h4>
-                  <ul className="space-y-2">
-                    {project.highlights.map((highlight, highlightIdx) => (
-                      <li key={highlightIdx} className="flex items-center text-sm text-gray-600">
-                        <FiStar className="w-3 h-3 mr-2 text-[var(--color-orange)] flex-shrink-0" />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
                 {/* Action buttons */}
-                <div className="flex space-x-3">
-                  <button className="flex-1 bg-[var(--color-orange)] text-white py-3 px-4 rounded-md font-medium hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center hover:shadow-lg">
-                    <FiExternalLink className="w-4 h-4 mr-2" />
-                    Voir démo
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="flex-1 bg-[var(--color-orange)] text-white py-4 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200 flex items-center justify-center hover:shadow-lg hover:scale-105 text-lg">
+                    <FiExternalLink className="w-5 h-5 mr-3" />
+                    Voir la démo
                   </button>
-                  <button className="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-4 rounded-md font-medium hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 flex items-center justify-center">
-                    <FiGithub className="w-4 h-4 mr-2" />
-                    Code
+                  <button className="flex-1 border-2 border-gray-300 text-gray-700 py-4 px-6 rounded-lg font-semibold hover:border-[var(--color-orange)] hover:bg-gray-50 transition-all duration-200 flex items-center justify-center hover:scale-105 text-lg">
+                    <FiGithub className="w-5 h-5 mr-3" />
+                    Voir le code
                   </button>
                 </div>
               </div>
