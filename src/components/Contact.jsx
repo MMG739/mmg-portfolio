@@ -154,7 +154,7 @@ export default function Contact() {
               Contactez-moi directement sur WhatsApp pour une réponse plus rapide.
             </p>
             <a 
-              href="https://wa.me/22178152233?text=Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet"
+              href="https://wa.me/221781522330?text=Bonjour%2C%20je%20souhaite%20discuter%20d%27un%20projet"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-white text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
