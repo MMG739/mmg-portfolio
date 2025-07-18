@@ -189,7 +189,7 @@ const Education = () => {
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-[var(--color-orange)] bg-opacity-10 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gray-100 bg-opacity-10 rounded-lg flex items-center justify-center">
                       <FiAward className="w-6 h-6 text-[var(--color-orange)]" />
                     </div>
                     <div className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
