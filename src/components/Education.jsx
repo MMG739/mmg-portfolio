@@ -8,21 +8,21 @@ const Education = () => {
   const diplomes = [
     {
       id: 1,
-      title: "Master en Informatique",
-      institution: "Université de Technologie",
-      location: "Paris, France",
-      period: "2020 - 2022",
+      title: "Master en Data Science et Intelligence Artificielle",
+      institution: "Ecole d'Ingénieurs ISM et ESG Paris",
+      location: "Dakar, Sénégal",
+      period: "2024 - 2026",
       grade: "Mention Très Bien",
-      description: "Spécialisation en développement web et mobile, intelligence artificielle",
+      description: "Spécialisation en data science, intelligence artificielle",
       skills: ["Développement Full-Stack", "Machine Learning", "Gestion de projet"],
       projects: ["Projet de fin d'études sur l'IA", "Application mobile collaborative"]
     },
     {
       id: 2,
-      title: "Licence Informatique",
-      institution: "Institut Supérieur de Technologie",
-      location: "Lyon, France",
-      period: "2017 - 2020",
+      title: "Licence Informatique en Genie Logiciel",
+      institution: "Digital Campus de L'ISM",
+      location: "Dakar, Sénégal",
+      period: "2021 - 2024",
       grade: "Mention Bien",
       description: "Fondamentaux de l'informatique, programmation, bases de données",
       skills: ["Programmation", "Bases de données", "Algorithmique"],
@@ -84,7 +84,7 @@ const Education = () => {
         <div className="bg-gray-100 p-1 rounded-lg">
           <button
             onClick={() => setActiveTab('diplomes')}
-            className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
+            className={`px-3 py-3 rounded-md font-medium transition-all duration-300 ${
               activeTab === 'diplomes'
                 ? 'bg-white text-[var(--color-orange)] shadow-md'
                 : 'text-gray-600 hover:text-gray-900'
@@ -95,7 +95,7 @@ const Education = () => {
           </button>
           <button
             onClick={() => setActiveTab('certifications')}
-            className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
+            className={`px-3 py-3 rounded-md font-medium transition-all duration-300 ${
               activeTab === 'certifications'
                 ? 'bg-white text-[var(--color-orange)] shadow-md'
                 : 'text-gray-600 hover:text-gray-900'

@@ -50,7 +50,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-2 gap-6 mt-4">
             <div className="flex flex-col items-center bg-white rounded-lg shadow p-4">
               <FaLaptopCode className="text-2xl text-[var(--color-orange)] mb-1" />
-              <span className="text-xl font-bold text-[var(--color-orange)]">5+</span>
+              <span className="text-xl font-bold text-[var(--color-orange)]">3+</span>
               <span className="text-xs text-gray-600">Années d’expérience</span>
             </div>
             <div className="flex flex-col items-center bg-white rounded-lg shadow p-4">
