@@ -36,10 +36,11 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 z-50">
-      <div className="max-w-8xl mx-auto flex justify-between items-center px-16 py-4">
-        <Link href="/" aria-label="Accueil">
+      <div className="max-w-8xl mx-auto flex justify-between items-center px-16 h-[60px] ">
+        <Link href="/" aria-label="Accueil" className="flex items-center gap-3">
+          <img src="/logo-1.png" alt="MMG logo" className="w-30 h-30 object-contain" />
           <div className="flex items-center gap-2 font-semibold text-[var(--foreground)]">
-            <div className="bg-[var(--color-orange)] text-white rounded px-2 py-2 text-sm font-bold">MMG</div>
+            {/* <div className="hidden sm:flex items-center justify-center bg-[var(--color-orange)] text-white rounded px-2 py-2 text-sm font-bold">MMG</div> */}
             <span className="hidden text-black sm:block">Mouhamadou Moustapha Gueye</span>
           </div>
         </Link>
