@@ -1,16 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
 import { FaBars, FaTimes } from "react-icons/fa";
-
-
-const navLinks = [
-  { href: '#about', label: 'À propos' },
-  { href: '#skills', label: 'Compétences' },
-  { href: '#projects', label: 'Projets' },
-  { href: '#contact', label: 'Contact' },
-]
+import { navLinks } from '../constants/data';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,22 +29,21 @@ export default function Header() {
   }, [isOpen])
 
   return (
-    <header className="w-full bg-white shadow-sm fixed top-0 z-50">
+    <header className="w-full bg-white dark:bg-gray-900 shadow-sm fixed top-0 z-50 transition-colors duration-300">
       <div className="max-w-8xl mx-auto flex justify-between items-center px-16 h-[60px] ">
         <Link href="/" aria-label="Accueil" className="flex items-center gap-3">
-          <img src="/logo-1.png" alt="MMG logo" className="w-30 h-30 object-contain" />
+          <Image src="/logo-1.png" alt="MMG logo" width={40} height={40} className="object-contain" />
           <div className="flex items-center gap-2 font-semibold text-[var(--foreground)]">
-            {/* <div className="hidden sm:flex items-center justify-center bg-[var(--color-orange)] text-white rounded px-2 py-2 text-sm font-bold">MMG</div> */}
-            <span className="hidden text-black sm:block">Mouhamadou Moustapha Gueye</span>
+            <span className="hidden text-black dark:text-white sm:block">Mouhamadou Moustapha Gueye</span>
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700 font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700 dark:text-gray-300 font-medium">
           {navLinks.map(link => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-[var(--color-orange)]"
+              className="hover:text-[var(--color-orange)] dark:hover:text-[var(--color-orange)] transition-colors"
             >
               {link.label}
             </Link>
@@ -86,7 +79,7 @@ export default function Header() {
         id="mobile-menu"
         ref={dropdownRef}
         tabIndex={isOpen ? 0 : -1}
-        className={`md:hidden bg-white px-4 pb-4 space-y-2 text-sm text-gray-700 font-medium shadow transition-all duration-300 ease-in-out
+        className={`md:hidden bg-white dark:bg-gray-900 px-4 pb-4 space-y-2 text-sm text-gray-700 dark:text-gray-300 font-medium shadow transition-all duration-300 ease-in-out
           ${isOpen ? 'max-h-96 opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none'}
         `}
         aria-hidden={!isOpen}
