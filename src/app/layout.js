@@ -3,7 +3,7 @@ import Script from "next/script";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const GA_ID = "G-G1RH2ZVW9X";
+const GA_ID = "G-H6KMLPJ87C";
 
 export const metadata = {
   metadataBase: new URL("https://mmgueye.xyz"),
