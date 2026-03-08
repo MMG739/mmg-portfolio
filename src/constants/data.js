@@ -264,11 +264,49 @@ export const techIconsList = [
 export const projectsData = [
   {
     id: 1,
+    title: "Yros Platform",
+    subtitle: { fr: "Ecosystème de Gestion RH & Paie", en: "HR Management & Payroll Ecosystem" },
+    description: {
+      fr: "Solution SaaS de pointe pour la gestion du capital humain, intégrant des modules de paie complexes, le suivi des performances et des tableaux de bord décisionnels en temps réel.",
+      en: "Cutting-edge SaaS solution for human capital management, integrating complex payroll modules, performance tracking, and real-time decision-making dashboards."
+    },
+    technologies: ["React", "Flask", "Tailwind CSS", "PostgreSQL", "Odoo"],
+    image: "/Yros.png",
+    demoUrl: "https://yros.io",
+    githubUrl: "#",
+    statusKey: "projects.status.prod",
+    duration: { fr: "6 mois", en: "6 months" },
+    highlights: {
+      fr: ["Automatisation Odoo ERP", "Calculatrice de paie intelligente", "Architecture microservices"],
+      en: ["Odoo ERP automation", "Intelligent payroll calculator", "Microservices architecture"]
+    }
+  },
+  {
+    id: 2,
+    title: "YROS Simulateur",
+    subtitle: { fr: "Optimiseur Fiscal & Social Haute Précision", en: "High-Precision Tax & Social Optimizer" },
+    description: {
+      fr: "Outil de simulation financière robuste conçu pour le marché sénégalais, permettant de calculer avec exactitude le net, le brut et les charges patronales en un clic.",
+      en: "Robust financial simulation tool designed for the Senegalese market, accurately calculating net, gross, and employer contributions in one click."
+    },
+    technologies: ["React", "Tailwind CSS", "Odoo", "Python"],
+    image: "/Yros-simulateur.png",
+    demoUrl: "https://yros.io/simulateur",
+    githubUrl: "#",
+    statusKey: "projects.status.done",
+    duration: { fr: "4 mois", en: "4 months" },
+    highlights: {
+      fr: ["Conformité fiscale 100%", "Export PDF instantané", "Interface ultra-fluide"],
+      en: ["100% Tax compliance", "Instant PDF export", "Ultra-fluid interface"]
+    }
+  },
+  {
+    id: 3,
     title: "First Aid App",
-    subtitle: { fr: "Application mobile de premiers secours", en: "First Aid Mobile App" },
-    description: { 
-      fr: "Une application mobile moderne pour apprendre les gestes de premiers secours avec des tutoriels interactifs et des simulations en réalité augmentée.",
-      en: "A modern mobile app for learning first aid techniques with interactive tutorials and augmented reality simulations."
+    subtitle: { fr: "Plateforme d'Apprentissage Immersif (AR)", en: "Immersive Learning Platform (AR)" },
+    description: {
+      fr: "Application révolutionnaire utilisant la réalité augmentée pour enseigner les gestes de premiers secours via des scénarios interactifs et des guides visuels 3D.",
+      en: "Revolutionary application using augmented reality to teach first aid techniques via interactive scenarios and 3D visual guides."
     },
     technologies: ["React Native", "TypeScript", "Firebase", "AR Kit"],
     image: "/First-aid.png",
@@ -277,46 +315,8 @@ export const projectsData = [
     statusKey: "projects.status.dev",
     duration: { fr: "3 mois", en: "3 months" },
     highlights: {
-      fr: ["Interface intuitive", "Mode hors-ligne", "Certifications"],
-      en: ["Intuitive interface", "Offline mode", "Certifications"]
-    }
-  },
-  {
-    id: 2,
-    title: "Yros Platform",
-    subtitle: { fr: "Plateforme de gestion RH", en: "HR Management Platform" },
-    description: { 
-      fr: "Solution complète de gestion des ressources humaines avec tableau de bord analytics, gestion des paies et suivi des performances.",
-      en: "Comprehensive human resources management solution with analytics dashboard, payroll management, and performance tracking."
-    },
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
-    image: "/Yros.png",
-    demoUrl: "#",
-    githubUrl: "#",
-    statusKey: "projects.status.prod",
-    duration: { fr: "6 mois", en: "6 months" },
-    highlights: {
-      fr: ["Dashboard temps réel", "API REST", "Sécurité avancée"],
-      en: ["Real-time dashboard", "REST API", "Advanced security"]
-    }
-  },
-  {
-    id: 3,
-    title: "Resto-ISM",
-    subtitle: { fr: "Application de gestion de restaurant", en: "Restaurant Management App" },
-    description: { 
-      fr: "Système de point de vente moderne avec gestion des commandes, inventaire intelligent et analytics pour restaurants.",
-      en: "Modern point-of-sale system with order management, intelligent inventory, and analytics for restaurants."
-    },
-    technologies: ["Vue.js", "Express.js", "MongoDB", "Socket.io"],
-    image: "/Resto-ism.png",
-    demoUrl: "#",
-    githubUrl: "#",
-    statusKey: "projects.status.done",
-    duration: { fr: "4 mois", en: "4 months" },
-    highlights: {
-      fr: ["POS intégré", "Temps réel", "Multi-device"],
-      en: ["Integrated POS", "Real-time", "Multi-device"]
+      fr: ["Simulations AR interactives", "Mode hors-ligne complet", "Certifications intégrées"],
+      en: ["Interactive AR simulations", "Full offline mode", "Integrated certifications"]
     }
   }
 ];

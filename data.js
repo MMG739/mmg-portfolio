@@ -263,10 +263,10 @@ export const techIconsList = [
 
 export const projectsData = [
   {
-    id: 1,
+    id: 3,
     title: "First Aid App",
     subtitle: { fr: "Application mobile de premiers secours", en: "First Aid Mobile App" },
-    description: { 
+    description: {
       fr: "Une application mobile moderne pour apprendre les gestes de premiers secours avec des tutoriels interactifs et des simulations en r├®alit├® augment├®e.",
       en: "A modern mobile app for learning first aid techniques with interactive tutorials and augmented reality simulations."
     },
@@ -282,16 +282,16 @@ export const projectsData = [
     }
   },
   {
-    id: 2,
+    id: 1,
     title: "Yros Platform",
     subtitle: { fr: "Plateforme de gestion RH", en: "HR Management Platform" },
-    description: { 
+    description: {
       fr: "Solution compl├¿te de gestion des ressources humaines avec tableau de bord analytics, gestion des paies et suivi des performances.",
       en: "Comprehensive human resources management solution with analytics dashboard, payroll management, and performance tracking."
     },
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
+    technologies: ["React", "Flask", "Tailwind CSS", "PostgreSQL", "Odoo"],
     image: "/Yros.png",
-    demoUrl: "#",
+    demoUrl: "https://yros.io",
     githubUrl: "#",
     statusKey: "projects.status.prod",
     duration: { fr: "6 mois", en: "6 months" },
@@ -301,16 +301,16 @@ export const projectsData = [
     }
   },
   {
-    id: 3,
-    title: "Resto-ISM",
-    subtitle: { fr: "Application de gestion de restaurant", en: "Restaurant Management App" },
-    description: { 
-      fr: "Syst├¿me de point de vente moderne avec gestion des commandes, inventaire intelligent et analytics pour restaurants.",
-      en: "Modern point-of-sale system with order management, intelligent inventory, and analytics for restaurants."
+    id: 2,
+    title: "YROS Simulateur",
+    subtitle: { fr: "Simulateur permettant de calculer le net ou le sursalaire d'un travailleur ainsi que ses impots et cotisations sociales ", en: "Simulator allowing to calculate the net or the overtime pay of a worker as well as his taxes and social contributions" },
+    description: {
+      fr: "Un simulateur permettant de calculer le net ou le sursalaire d'un travailleur ainsi que ses impots et cotisations sociales ",
+      en: "A simulator allowing to calculate the net or the overtime pay of a worker as well as his taxes and social contributions"
     },
-    technologies: ["Vue.js", "Express.js", "MongoDB", "Socket.io"],
-    image: "/Resto-ism.png",
-    demoUrl: "#",
+    technologies: ["React", "Tailwind CSS", "Odoo", "Python"],
+    image: "/Yros-simulateur.png",
+    demoUrl: "https://yros.io/simulateur",
     githubUrl: "#",
     statusKey: "projects.status.done",
     duration: { fr: "4 mois", en: "4 months" },
@@ -324,17 +324,17 @@ export const projectsData = [
 export const diplomesData = [
   {
     id: 1,
-    title: { 
-      fr: "Master en Data Science et Intelligence Artificielle", 
-      en: "Master in Data Science and Artificial Intelligence" 
+    title: {
+      fr: "Master en Data Science et Intelligence Artificielle",
+      en: "Master in Data Science and Artificial Intelligence"
     },
     institution: "Ecole d'Ing├®nieurs ISM et ESG Paris",
     location: "Dakar, S├®n├®gal",
     period: "2024 - 2026",
     grade: { fr: "Mention Tr├¿s Bien", en: "With Honors" },
-    description: { 
-      fr: "Sp├®cialisation en data science, intelligence artificielle", 
-      en: "Specialization in data science, artificial intelligence" 
+    description: {
+      fr: "Sp├®cialisation en data science, intelligence artificielle",
+      en: "Specialization in data science, artificial intelligence"
     },
     skills: ["D├®veloppement Full-Stack", "Machine Learning", "Gestion de projet"],
     projects: {
@@ -344,17 +344,17 @@ export const diplomesData = [
   },
   {
     id: 2,
-    title: { 
-      fr: "Licence Informatique en Genie Logiciel", 
-      en: "Bachelor in Software Engineering" 
+    title: {
+      fr: "Licence Informatique en Genie Logiciel",
+      en: "Bachelor in Software Engineering"
     },
     institution: "Digital Campus de L'ISM",
     location: "Dakar, S├®n├®gal",
     period: "2021 - 2024",
     grade: { fr: "Mention Bien", en: "With Distinction" },
-    description: { 
-      fr: "Fondamentaux de l'informatique, programmation, bases de donn├®es", 
-      en: "Computer science fundamentals, programming, databases" 
+    description: {
+      fr: "Fondamentaux de l'informatique, programmation, bases de donn├®es",
+      en: "Computer science fundamentals, programming, databases"
     },
     skills: ["Programmation", "Bases de donn├®es", "Algorithmique"],
     projects: {
