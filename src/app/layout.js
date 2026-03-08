@@ -44,7 +44,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MMG Portfolio",
+    title: "MMG",
     description: "Portfolio de Mouhamadou Moustapha Gueye — Développeur FullStack, Odoo, IA & Data.",
     site: "@mmgueye",
     creator: "@mmgueye",
