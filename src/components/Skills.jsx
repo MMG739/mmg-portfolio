@@ -1,5 +1,8 @@
+"use client";
+
 import { skillsList, techIconsList } from '../constants/data';
 import { FaBrain, FaCode, FaDatabase, FaCloud, FaDocker, FaGitAlt } from "react-icons/fa";
+import { useLanguage } from '../context/LanguageContext';
 import { SiTensorflow, SiPytorch, SiPostgresql } from "react-icons/si";
 
 const iconMap = {
@@ -15,17 +18,18 @@ const iconMap = {
 };
 
 export default function SkillsSection() {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-20 px-4 bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className="text-center mb-10">
-        <h3 className="text-[var(--color-orange)] font-semibold uppercase text-sm">Compétences</h3>
-        <h2 className="text-2xl font-bold dark:text-white">Mon expertise technique</h2>
+        <h3 className="text-[var(--color-orange)] font-semibold uppercase text-sm">{t('nav.skills')}</h3>
+        <h2 className="text-2xl font-bold dark:text-white">{t('skills.subtitle') || "Mon expertise technique"}</h2>
       </div>
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {skillsList.map((skill) => (
-          <div key={skill.category} className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div key={skill.categoryKey} className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             {iconMap[skill.iconName]}
-            <h4 className="text-[var(--color-orange)] font-bold mb-2 text-center">{skill.category}</h4>
+            <h4 className="text-[var(--color-orange)] font-bold mb-2 text-center">{t(skill.categoryKey)}</h4>
             <ul className="space-y-1 text-center">
               {skill.items.map((item) => (
                 <li key={item} className="text-gray-700 dark:text-gray-300">{item}</li>

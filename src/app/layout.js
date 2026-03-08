@@ -1,6 +1,8 @@
 import "@/app/globals.css";
 import Script from "next/script";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
 const GA_ID = "G-H6KMLPJ87C";
@@ -48,16 +50,15 @@ export const metadata = {
     creator: "@mmgueye",
   },
   icons: {
-    icon: "/favicon_io/favicon.ico",
-    shortcut: "/favicon_io/favicon-32x32.png",
-    apple: "/favicon_io/apple-touch-icon.png",
+    icon: "/logo-3.png",
+    shortcut: "/logo-3.png",
+    apple: "/logo-3.png",
   },
-  manifest: "/favicon_io/site.webmanifest",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -79,7 +80,7 @@ gtag('config', '${GA_ID}');`}
         </Script>
       </head>
       <body
-        className={`${inter.className} bg-white text-gray-900`}
+        className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300`}
         suppressHydrationWarning={true}
       >
         <noscript>
@@ -90,7 +91,11 @@ gtag('config', '${GA_ID}');`}
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

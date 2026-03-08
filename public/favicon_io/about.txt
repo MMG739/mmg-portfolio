@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Noto Serif Bengali
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/notoserifbengali/v27/hYkuPvggTvnzO14VSXltirUdnnkt1pwmWrprmO7RjE0a5BtdATYU1crFaM_5JffnGXqn4LjQH8yD.ttf
-- Font License: undefined)

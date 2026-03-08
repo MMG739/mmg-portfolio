@@ -1,5 +1,8 @@
+"use client";
+
 import { FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import { contactInfoData, socialMediaData } from '../constants/data';
+import { useLanguage } from '../context/LanguageContext';
 
 const iconComponents = {
   FaEnvelope: FaEnvelope,
@@ -12,17 +15,20 @@ const iconComponents = {
 };
 
 export default function Contact() {
+  const { language, t } = useLanguage();
   return (
     <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h3 className="text-[var(--color-orange)] font-semibold uppercase text-sm mb-2">Contact</h3>
+          <h3 className="text-[var(--color-orange)] font-semibold uppercase text-sm mb-2">{t('contact.title')}</h3>
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-            Restons en Contact
+            {t('contact.subtitle') || "Restons en Contact"}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            N'hésitez pas à me contacter pour discuter de vos projets, collaborations ou simplement pour échanger sur le développement web.
+            {language === 'fr' 
+              ? "N'hésitez pas à me contacter pour discuter de vos projets, collaborations ou simplement pour échanger sur le développement web."
+              : "Feel free to contact me to discuss your projects, collaborations, or simply to talk about web development."}
           </p>
         </div>
 
@@ -33,7 +39,7 @@ export default function Contact() {
               <div className="w-8 h-8 bg-[var(--color-orange)] rounded-lg flex items-center justify-center mr-3">
                 <FaEnvelope className="w-4 h-4 text-white" />
               </div>
-              Informations de Contact
+              {language === 'fr' ? "Informations de Contact" : "Contact Information"}
             </h3>
             
             <div className="space-y-6 flex-1">
@@ -49,7 +55,7 @@ export default function Contact() {
                         <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1 mt-1">
-                        <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{item.label}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{t(item.labelKey)}</p>
                         <p className="text-gray-900 dark:text-white font-semibold break-all leading-tight">
                           {item.value}
                         </p>
@@ -67,7 +73,7 @@ export default function Contact() {
               <div className="w-8 h-8 bg-[var(--color-orange)] rounded-lg flex items-center justify-center mr-3">
                 <FaGithub className="w-4 h-4 text-white" />
               </div>
-              Réseaux Sociaux
+              {language === 'fr' ? "Réseaux Sociaux" : "Social Media"}
             </h3>
             
             <div className="grid grid-cols-2 gap-4 flex-1">
@@ -134,10 +140,12 @@ export default function Contact() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
             </div>
-            <span className="text-green-600 dark:text-green-400 font-bold text-lg">Disponible pour de nouveaux projets</span>
+            <span className="text-green-600 dark:text-green-400 font-bold text-lg">{t('contact.badge')}</span>
           </div>
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Je suis actuellement disponible pour des missions de développement web, des collaborations ou des projets freelance.
+            {language === 'fr' 
+              ? "Je suis actuellement disponible pour des missions de développement web, des collaborations ou des projets freelance."
+              : "I am currently available for web development missions, collaborations, or freelance projects."}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
             <span className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full">Développement Frontend</span>
